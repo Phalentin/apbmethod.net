@@ -13,10 +13,10 @@ const banner = <Banner storageKey="some-key">The APB Method Website is released!
 const navbar = (
   <Navbar
     logo={<><img src='/images/apb_icon.png' alt='Icon of the APB Method' width={40} height={40}></img><b>APB Method</b></>}
-    projectLink='https://github.com/phalentin/apbmethod.net'
+    projectLink='https://github.com/phalentin/apbmethod.net/'
   />
 )
-const footer = <Footer><p>Made with ❤️ by <a href="https://www.youtube.com/@justenoughalgorithms" target="_blank"><strong>JustEnoughAlgorithms</strong></a> in 🇨🇭.</p></Footer>
+const footer = <Footer><p>Made with ♥️ by <a href="https://www.youtube.com/@justenoughalgorithms" target="_blank"><strong>JustEnoughAlgorithms</strong></a>.</p></Footer>
  
 export default async function RootLayout({ children }) {
   return (
@@ -37,7 +37,7 @@ export default async function RootLayout({ children }) {
         <Layout
           navbar={navbar}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/phalentin/apbmethod.net"
+          docsRepositoryBase="https://github.com/phalentin/apbmethod.net/tree/main/"
           footer={footer}
           banner={banner}
           
