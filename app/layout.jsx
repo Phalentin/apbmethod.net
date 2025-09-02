@@ -16,7 +16,7 @@ const navbar = (
     projectLink='https://github.com/phalentin/apbmethod.net'
   />
 )
-const footer = <Footer><p>Made with ❤️ by <a href="https://www.youtube.com/@justenoughalgorithms" target="_blank"><strong>JustEnoughAlgorithms.</strong></a></p></Footer>
+const footer = <Footer><p>Made with ❤️ by <a href="https://www.youtube.com/@justenoughalgorithms" target="_blank"><strong>JustEnoughAlgorithms</strong></a> in 🇨🇭.</p></Footer>
  
 export default async function RootLayout({ children }) {
   return (
