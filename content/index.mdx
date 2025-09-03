@@ -1,3 +1,5 @@
+import { Steps } from 'nextra/components'
+
 # Welcome to the APB Method Website
 Welcom to *apbmethod.net*! If you are looking for an introduction to APB, you might want to look [here](/introduction). I made this page in order to introduce as many people as possible to the APB method because I really do think that it has a lot of potential. This site is a learning resource for all levels of APB solvers.
 
@@ -5,11 +7,23 @@ Welcom to *apbmethod.net*! If you are looking for an introduction to APB, you mi
 APB is a speedsolving 3x3 method proposed by James Straughan aka. Athefre in 2021. Having a movecount of about 48-50 moves and being very algorithm-based, it has a lot of potential for being fast at a high level. For a tutorial on the method, see [here](/tutorial).
 
 Standard APB consists of 5 steps:
-1. [2x2x3](/tutorial/223): Solve a 2x2x3 block in the bottom-left. This is usually accomplished by building a Roux-style 1x2x3 block and then extending it by solving the DF and DB edges.
-2. [dBR Pair](/tutorial/pair): The back-right F2L pair is solved intuitively.
-3. [EO](/tutorial/eo): The edge-orientation of the remaining edges is solved algorithmically (11 algorithms).
-4. [LXS](/tutorial/lxs): The remaining three F2L pieces are solved algorithmically (116 algorithms).
-5. [ZBLL](/tutorial/zbll): The last layer is solved (493 algorithms).
+<Steps>
+{<h3>Step 1: 2x2x3 block on the left side</h3>}
+Solve a 2x2x3 block in the bottom-left. This is usually accomplished by building a Roux-style 1x2x3 block and then extending it by solving the DF and DB edges.
+
+{<h3>Step 2: Solving the back-right F2L-pair</h3>}
+The back-right F2L pair is solved intuitively.
+
+{<h3>Step 3: Solve the edge-orientation of the remaining edges (EO)</h3>}
+The edge-orientation of the remaining edges is solved algorithmically (11 algorithms).
+
+{<h3> Step 4: Solve the last three F2L pieces (LXS)</h3>}
+The remaining three F2L pieces are solved algorithmically (116 algorithms).
+
+{<h3>Step 5: Solve the last layer using ZBLL</h3>}
+The last layer is solved using ZBLL, which consists of 493 algorithms.
+< [!]
+</Steps>
 
 ## About Me
 Hi, this is [JustEnoughAlgorithms](https://www.youtube.com/@justenoughalgorithms) and I'm the creator of this website. I've been using APB since autumn of 2023 and have been using it in competition ever since. I've managed to beat all of my old PBs that I had set with Roux. [My WCA Profile](https://www.worldcubeassociation.org/persons/2022PERR01)
