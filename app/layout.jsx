@@ -30,6 +30,7 @@ export default async function RootLayout({ children }) {
     >
       <Head
       // ... Your additional head options
+      children={<script src="https://cdn.cubing.net/v0/js/cubing/twisty" type="module"></script>}
       >
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
