@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Callout, Tabs } from 'nextra/components'
+import { Callout, Tabs, Steps } from 'nextra/components'
 
 # How to solve the 2x2x3
 <Callout type="info">
@@ -14,5 +14,22 @@ The first step of the APB method is building a 2x2x3 block on the bottom-left si
 </Callout>
 
 ## 1x2x3 → 2x2x3
-<Image src="/images/tutorial/123-223.svg" width={200} height={200} alt="Image of a cube being solved using the 1x2x3 to 2x2x3 method."/>
-First creating a Roux-style 1x2x3 block and then adding the DF and DB pieces is probably the most consistent way of solving the 2x2x3. It involves solving a 1x2x3 block on the left side.
+<Image src="/images/tutorial/123-223.svg" width={200} height={200} alt="Image of the 2x2x3 being solved using the 1x2x3 to 2x2x3 method"/>
+First creating a Roux-style 1x2x3 block and then adding the DF and DB edges is probably the most consistent way of solving the 2x2x3. On most scrambles, this way of making your 2x2x3 leads to an efficient solution.
+
+### Creating the 1x2x3
+Like with the whole 2x2x3, the 1x2x3 can also be created through various techniques. To figure out new techniques, it is recommended you experiment a little on your own as well. Below are some possible methods to create the 1x2x3.
+
+<Tabs items={['F2L-Style', 'Line', 'Other Blockbuilding']}>
+    <Tabs.Tab>
+        <Image src="/images/tutorial/f2l-123.svg" width={120} height={120} alt="Image of the 1x2x3 being solved using an F2L-style method"/>
+        It is possible to create the 1x2x3 using an F2L-style approach by first solving the DL edge and then creating and inserting the two left F2L pairs. It can sometimes be a bit hard to find efficient solutions using this method, so you should always be able to solve with other techniques as well.
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <Image src="/images/tutorial/line-123.svg" width={120} height={120} alt="Image of the 1x2x3 being solved using the line method"/>
+        A 1x2x3-block can also be created using two 1x1x3 lines. These can be made in any order. If the scramble allows for it or even comes with a line pre-built, this method can lead to very efficient solutions.
+    </Tabs.Tab>
+    <Tabs.Tab>
+        <Image src="/images/tutorial/other-blockbuilding-123.svg" width={120} height={120} alt="Image of the 1x2x3 being solved using other blockbuilding"/>
+    </Tabs.Tab>
+</Tabs>
