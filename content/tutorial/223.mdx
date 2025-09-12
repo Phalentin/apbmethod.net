@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import { Callout, Tabs, Steps } from 'nextra/components'
 
-# How to solve the 2x2x3
+<Image src="/images/tutorial/223.svg" width={200} height={200} alt="Image of a cube with the 2x2x3 block done"/>
+# 1. Solving a 2x2x3
 <Callout type="info">
     For simplicity purposes, this tutorial will explain the method using white on the bottom face, even though at a higher level, solvers should be able to solve with either white or yellow on the bottom.
 </Callout>
 
 ## Introduction
-<Image src="/images/tutorial/223.svg" width={200} height={200} alt="Image of a cube with the 2x2x3 block done"/>
 The first step of the APB method is building a 2x2x3 block on the bottom-left side of the cube. This can be achieved through various ways and it is ultimately up to the solver to decide on which option to choose for a particular scramble. Since this is by far the step with the most freedom, there are a lot of techniques required to consistently achieve a good movecount. Below I will show some of the most useful and consistent methods of creating the 2x2x3.
 <Callout type="important">
     Unlike in regular Petrus, the 2x2x3 in APB is always solved on the bottom-left.
@@ -40,7 +40,7 @@ Like with the whole 2x2x3, the 1x2x3 can also be created through various techniq
     </Tabs.Tab>
 </Tabs>
 
-### Solving the DFDB edges
+### Solving the DFDB Edges
 After having created the 1x2x3 block in dL, you can extend it to a 2x2x3 by solving the edges at DF and DB. This can be achieved in two main ways: You can either solve each of them seperately by placing them in the U-layer an then inserting them by doing `r U' r'`, `r U2 r'`, `r' U r`, or `r' U2 r` depending on the situation. The other option is creating a line consisting of the two edges and the white center in the U-layer and then inserting it by doing an `r2`-move. This method often is more efficient, especially when the edges are oriented (e.g. have their white side on the U-face, front-right, back-right or D-face).
 
 <Callout type="default">
@@ -51,15 +51,19 @@ After having created the 1x2x3 block in dL, you can extend it to a 2x2x3 by solv
 <Image src="/images/tutorial/222-223.svg" width={200} height={200} alt="Image of the 2x2x3 being solved using the 2x2x2 to 2x2x3 method"/>
 An alternative way to solve the 2x2x3 is first creating a 2x2x2 in *dbl* or *dlf* and then extending it by attaching a second 1x1x2 block in *dlF* or *dBl*. This is a very versatile technique too, but it sometimes leads to awkward fingertricks with `F2`- or `B2`-moves.
 
-## Creating the 2x2x2
+### Creating the 2x2x2
 <Image src="/images/tutorial/222-slab.svg" width={120} height={120} alt="Image of the 2x2x2 being solved using the 'slab'-technique"/>
 One way of creating a 2x2x2 block is by creating a 1x2x2 block in *Dbl* or *Dlf*. You can then add an edge with the correct two center pieces, creating a 2x2x2. Of course it is also possible to first create a block in *Ebl* or *Elf* and then adding the other block. As there is a lot of freedom, we recommend you experiment a bit on your own.
 
-## Three Cross Pieces + 2 F2L pairs
+### Extending to a 2x2x3
+<Image src="/images/tutorial/222-223.svg" width={120} height={120} alt="Image of the 2x2x2 being extended to a 2x2x3"/>
+To then add another 1x2x2, you can again make use of multiple strategies. Often, you would connect one of the two edges to the center and then attach a corner-edge pair using a sequence like `R' F R` or `L F' L'`. You might even solve the two edges first and then solve the corner using a keyhole-style insert like `D R U R' D'`.
+
+## Three Cross Pieces + 2 F2L Pairs
 <Image src="/images/tutorial/cross_2f2l.svg" width={200} height={200} alt="Image of the 2x2x3 being solved using a cross+F2L style method"/>
 <Callout type="error">
     Even though you might be tempted to always solve your 2x2x3 like this, this is NOT the most efficient method and is only useful on very specific scrambles.
 </Callout>
-On some scrambles, solving the 2x2x3 like F2L in CFOP, except without any of the pieces in the R-layer, is the fastest method. Even though the movecount might not be too low, this method does allow for high TPS. Keep in mind we really only recommend this, if:
+On some scrambles, solving the 2x2x3 like F2L in CFOP, except without any of the pieces in the R-layer, is the fastest method. Even though the movecount might not be too low, this method does allow for high TPS. Keep in mind this is really only recommended if:
 - at least two cross pieces are solved or solvable in one move and
 - at least one of the two edges belonging into FL and BL is oriented (e.g. has its front/back color on the U-face, D-face if it is in those layers or the front/back face if it is in the E-layer).

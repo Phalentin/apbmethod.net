@@ -1,1 +1,33 @@
-# BR Pair
+import Image from 'next/image'
+
+<Image src="/images/tutorial/pair.svg" width={200} height={200} alt="Image of a cube with the BR pair solved"/>
+# 2. Solving the BR Pair
+Solving the dBR pair is the second step of APB. This is probably the most trivial step, as it can be completed intuitively and CFOP-solvers will already be familiar with it.
+
+## Oriented BR Edge
+If the BR edge is oriented (e.g. its back color is on top, bottom or at the front right), the standard CFOP solution will be the fastest most of the time. It is, however, often possible not to undo R-moves (see example).
+<twisty-player
+  experimental-setup-anchor="start"
+  experimental-setup-alg="x2 y S' U S r U R' U R U2 r' R U' R' f' U f R' U R'"
+  alg="R U' R"
+  hint-facelets="none"
+  camera-latitude="45"
+  camera-longitude="25"
+  color-scheme="dark"
+></twisty-player> 
+
+## Misoriented BR Edge
+When the BR edge is misoriented (e.g. its right color is on top, bottom, at the front right or back right), there are often fast solutions using S-moves (see example).
+<twisty-player
+  experimental-setup-anchor="start"
+  experimental-setup-alg="x2 y S' U S r U R' U R U2 r' R U' R' f' U f S R S'"
+  alg="S R' S'"
+  hint-facelets="none"
+  background="none"
+  camera-latitude="45"
+  camera-longitude="25"
+  color-scheme="dark"
+></twisty-player> 
+
+## Algorithm Sheet
+For some cases, especially those with a misoriented edge, learning the most efficient solution is really helpful. Those solutions can be found in [Liam Highducheck's sheet](https://docs.google.com/spreadsheets/d/1U1nwq_-HLeDgajuAOVRaH2Jo7X9zSTEBrnIRSv3hzeg/edit?gid=983211243#gid=983211243).

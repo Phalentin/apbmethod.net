@@ -39,7 +39,7 @@ export default async function RootLayout({ children }) {
           pageMap={await getPageMap()}
           docsRepositoryBase="https://github.com/phalentin/apbmethod.net/tree/main/"
           footer={footer}
-          banner={banner}
+          /*banner={banner}*/
           
           // ... Your additional layout options
         >
