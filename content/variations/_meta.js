@@ -1,4 +1,4 @@
 export default {
   eopair: 'EOPair',
-  backlxseo: 'Back Slot LXS & EO'
+  'back-lxs-eo': 'Back Slot LXS & EO'
 }

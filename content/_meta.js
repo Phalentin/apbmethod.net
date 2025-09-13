@@ -15,5 +15,6 @@ export default {
   },*/
   bigcubes: {
     title: '4x4+'
-  }
+  },
+  'other-resources': 'Other Resources'
 }
