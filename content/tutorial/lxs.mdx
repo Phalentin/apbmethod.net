@@ -1,1 +1,93 @@
-# Last Extended Slot (LXS)
+import { Callout, Steps } from 'nextra/components'
+import Image from 'next/image'
+
+<Image src="/images/tutorial/lxs.svg" width={200} height={200} alt="Image of a cube with LXS solved"/>
+# 4. Solving the Last Extended Slot (LXS)
+The last extended slot or LXS is probably the best step of the APB method. In this step, the solvers **solves the three remaining pieces in the *d*-layer**. This is done algorithmically and consists of **116 cases**.
+## Algorithms
+The LXS-algorithms can be found [here](https://docs.google.com/spreadsheets/d/1P2DB0SyA1BrezYJ_g7RJ7_l32Ilxq7lLtr53zlG_TUU/). Liam Highducheck has created a sheet which categorizes all the cases into seven categories for easier learning. It can be found [here](https://docs.google.com/spreadsheets/d/1ACKQXpMK0b8RWGoN9wMDbnF-W-S4mMdeJH5IcjeEyf8/).
+### Some Example Cases
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="R U2' R' U2 R' U2' R2 U2' R"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="R' U' R' U' R U2 R"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="R U R' U' R U' R' U R' U' R U R"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+
+<Callout type="default">
+    At a higher level, solvers can also learn dBL LXS and EO, which enables them to solve the FR pair and then do EO and LXS for the back slot. Usually, this is not worth it though.
+</Callout>
+
+## Beginner Approaches
+There are two main beginner approaches to solve LXS without or with fewer algorithms:
+### Solving the F2L Pair and then the DR Edge
+If you haven't learned any of the algorithms yet, you can follow the following approach:
+<Steps>
+    {<h3>Solve the dFR Pair</h3>}
+    **Solve the dFR pair like an F2L pair** while ignoring the edge belonging into DR. If the F2L edge is at DR, you have to take it out using `S R2' S' R2`.
+
+    {<h3>Solve the DR Edge</h3>}
+    **Solve the DR edge** by putting it at UL and then doing `S R2' S' R2`.
+</Steps>
+Below is an example solution using this approach:
+<twisty-player
+    id="lxs-beginner1"
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="
+        S R2' S' R2 R U2' R' U R U' R' U2 S R2' S' R2
+    "
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+
+### Inserting the Corner and then doing LXS
+If you have learned all the LXS cases with the corner in the D-layer, this approach allows you to do LXS in two steps:
+<Steps>
+    {<h3>Insert the Corner into DFR</h3>}
+    **Insert the corner** belonging into DFR. If you know all the LXS cases with the corner in the D-layer, the orientation doesn't matter. If you haven't learned all three sets, **the orientation has to match up** with one of the sets you learned. 
+
+    {<h3>Solve the LXS case</h3>}
+    Do the alg for the LXS case you have now.
+</Steps>
+Below is an example solution using this approach:
+<twisty-player
+    id="lxs-beginner1"
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="
+        U' R U R' U2 R U' R' U R' U2' R U2 R
+    "
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>

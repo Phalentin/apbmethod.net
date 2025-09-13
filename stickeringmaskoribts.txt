@@ -1,0 +1,11 @@
+Format: "EDGES:------------,CORNERS:--------,CENTERS:------"
+
+"-": visible
+"D": dark/tinted
+"I": invisible (dark grey)
+"M": magenta
+"O": shows U/D/EF/EB face (oriented sticker)
+"P": shows R/L/MF/MB face (misoriented sticker)
+"X": black
+"o": ignoriented (same as O, except the primary sticker is also dimmed)
+"?": orientation without permutation (useful for EO and CO on the entire cube! Primary stickers are replaced with turquoise)

@@ -1,3 +1,4 @@
+import { Callout } from 'nextra/components'
 import Image from 'next/image'
 
 <Image src="/images/tutorial/eo.svg" width={200} height={200} alt="Image of a cube with the edges oriented"/>
@@ -6,4 +7,56 @@ Edge orientation is the third step of APB. In this step, you orient all the unso
 
 ## What is Edge Orientation?
 <Image src="/images/tutorial/eo-orbits.svg" width={175} height={175} alt="Image of a cube with the edges oriented"/>
-Edge orientation is the way an edge is twisted on the cube. Orienting an edge makes it solvable using only R and U moves.
+Edge orientation is the way an edge is twisted on the cube. **Orienting an edge makes it solvable using only R- and U-moves**. At the same time, this means that the orientation of an edge can not be changed using only R- and U-moves. In the image above, a purple sticker can be moved to the spot of any other purple sticker with only R- and U-moves, but a light gray sticker can never move to a purple sticker and vice versa.
+
+## Recognizing Edge Orientation
+The orientation of the edges with a white or yellow sticker (so all except the FR edge) can be easily recognized:
+- 👍 If the white/yellow sticker is in any of the purple spots (or at DR), the edge is **good** (oriented).
+- 👎 If the white/yellow sticker is in a gray spot (or at RD), the edge is **bad** (misoriented).
+
+The orientation of the FR edge can be recognized by checking where the front sticker is.
+- 👍 If the front sticker is in any of the purple spots (or at DR), the edge is **good** (oriented).
+- 👎 If the front sticker is in a gray spot (or at RD), the edge is **bad** (misoriented).
+
+## Solving Edge Orientation
+In APB, edge orientation is solved algorithmically. There are 11 algorithms, which can be found [here](https://docs.google.com/spreadsheets/d/1Hs9ikHz-4cfbqBfqvuvE8X9sjCb4Jtm482ZvsFQA2rY/) (Note that you only need to learn the algs in the "dBR Solved EO" tab. The other algorithms belong to an older style of solving the BR pair and EO at the same time called [EOPair](/variations/eopair)). In the sheet, bad edges are colored light gray.
+
+### Some Example Cases
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:------------,CORNERS:-I--IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2 R U R2 U' R U R"
+    alg="S' U' S"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:------------,CORNERS:-I--IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2 R U R2 U' R U R"
+    alg="F R' F' R U S' U' S"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/> 
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:------------,CORNERS:-I--IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2 R U R2 U' R U R"
+    alg="S R' U' R U R S'"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/> 
+
+## Fingertricking S-Moves
+<Callout type="info">
+    S-moves go in the same direction as F-moves.
+</Callout>
+You might not be used to doing S-moves in the middle of your solve, but they are really not a problem. Try to think of them as just F-moves but one layer further back. Unlike F-moves however, you should be able to do push-turns as well. If you still have problems, see the small guide below:
+- **S-moves:** Either use your right index finger to **pull on the UR edge** from the top (do make sure that you **don't** use the very tip of the finger) or use your left index finger and **push on the UL edge** from the left.
+- **S'-moves:** Either use your left index finger to **pull on the UL edge** from the top (do make sure that you **don't** use the very tip of the finger) or use your right index finger and **push on the UR edge** from the right.
