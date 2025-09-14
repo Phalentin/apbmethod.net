@@ -29,19 +29,84 @@ Like with the whole 2x2x3, the 1x2x3 can also be created through various techniq
     <Tabs.Tab>
         <Image src="/images/tutorial/other-blockbuilding-123.svg" width={120} height={120} alt="Image of the 1x2x3 being solved using other blockbuilding"/>
         Various blockbuilding techniques can be used to build the 1x2x3. If the scramble, for example, already provides the block at *Db*, the solver could first solve the *Eb* edge and center in relation to each other and then insert them. Finally, they would create and solve the pair belonging in *dF*. On many scrambles, such blockbuilding techniques lead to the best solutions.
+        #### Example Solution
+        <twisty-player
+            id="blockbuilding-viewer"
+            experimentalStickeringMaskOrbits="EDGES:III-IIIII-I-,CORNERS:II--IIII,CENTERS:I-I-II"
+            experimental-setup-anchor="end"
+            experimental-setup-alg="x2"
+            alg="r D' r' U R2 B'"
+            hint-facelets="none"
+            camera-latitude="-35"
+            camera-longitude="-25"
+            color-scheme="dark"
+        />
+        <twisty-alg-viewer for="blockbuilding-viewer"/>
     </Tabs.Tab>
     <Tabs.Tab>
         <Image src="/images/tutorial/line-123.svg" width={120} height={120} alt="Image of the 1x2x3 being solved using the line method"/>
         A 1x2x3-block can also be created using two 1x1x3 lines. These can be made in any order. If the scramble allows for it or even comes with a pre-built line, this method can lead to very efficient solutions.
+        #### Example Solution
+        <twisty-player
+            id="line-viewer"
+            experimentalStickeringMaskOrbits="EDGES:III-IIIII-I-,CORNERS:II--IIII,CENTERS:I-I-II"
+            experimental-setup-anchor="end"
+            experimental-setup-alg="x2"
+            alg="U' R' U' R D2 U R U R' D'"
+            hint-facelets="none"
+            camera-latitude="-35"
+            camera-longitude="-25"
+            color-scheme="dark"
+        />
+        <twisty-alg-viewer for="line-viewer"/>
     </Tabs.Tab>
     <Tabs.Tab>
         <Image src="/images/tutorial/f2l-123.svg" width={120} height={120} alt="Image of the 1x2x3 being solved using an F2L-style method"/>
         It is possible to create the 1x2x3 using an F2L-style approach by first solving the DL edge and then creating and inserting the two left F2L pairs. It can sometimes be a bit hard to find efficient solutions using this method, so you should always be able to solve with other techniques as well.
+        #### Example Solution
+        <twisty-player
+            id="f2l-viewer"
+            experimentalStickeringMaskOrbits="EDGES:III-IIIII-I-,CORNERS:II--IIII,CENTERS:I-I-II"
+            experimental-setup-anchor="end"
+            experimental-setup-alg="x2"
+            alg="D' r' R2 F r' U2 r U R2 B'"
+            hint-facelets="none"
+            camera-latitude="-35"
+            camera-longitude="-25"
+            color-scheme="dark"
+        />
+        <twisty-alg-viewer for="f2l-viewer"/>
     </Tabs.Tab>
 </Tabs>
 
 ### Solving the DFDB Edges
 After having created the 1x2x3 block in dL, you can **extend it to a 2x2x3** by solving the edges at DF and DB. This can be achieved in two main ways: You can either solve each of them seperately by placing them in the U-layer an then inserting them by doing `r U' r'`, `r U2 r'`, `r' U r`, or `r' U2 r` depending on the situation. The other option is creating a line consisting of the two edges and the white center in the U-layer and then inserting it by doing an `r2`-move. This method often is more efficient, especially when the edges are oriented (e.g. have their white side on the U-face, front-right, back-right or D-face).
+
+#### Examples
+<twisty-player
+    id="dfdb1-viewer"
+    experimentalStickeringMaskOrbits="EDGES:-I-DIIIIIDID,CORNERS:IIDDIIII,CENTERS:-D----"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="U r U' r' U r' U r"
+    hint-facelets="none"
+    camera-latitude="35"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+<twisty-alg-viewer for="dfdb1-viewer"/>
+<twisty-player
+    id="dfdb2-viewer"
+    experimentalStickeringMaskOrbits="EDGES:-I-DIIIIIDID,CORNERS:IIDDIIII,CENTERS:-D----"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="R' U' R M' U r2"
+    hint-facelets="none"
+    camera-latitude="35"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+<twisty-alg-viewer for="dfdb2-viewer"/>
 
 <Callout type="default">
     Instead of creating the 1x2x3 in dL and then solving the DF and DB edges, you can also create the 1x2x3 in Dl and then solve the FL and BL edges.
