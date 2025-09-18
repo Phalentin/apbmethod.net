@@ -1,0 +1,37 @@
+import { Steps, Callout } from 'nextra/components'
+import Image from 'next/image'
+
+<Image src="/images/big-cubes/yaupb/yaupb.svg" width={200} height={200} alt="Image of YauPB on a 4x4x4" lnk="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&bg=t&pzl=4&r=y-35x25&fc=dddddddddddddddddddddddddddddddddddddbbddbbddbbddwwdwwwdwwwddwwddddddooddooddood"/>
+# YauPB for 4x4+
+YauPB is the most similar to regular Yau with CFOP. Since you always have to solve your 2x2x3 by first solving three cross pieces and then two F2L pairs, this is not really the recommended method. In most cases, [Meyer](/big-cubes/meyer.mdx) will be better. What you can do is choosing to do YauPB when you see a very easy white or yellow center (if those are your U/F-colors). In that case, the slightly slower 2x2x3 will be worth it. This tutorial is explained using 4x4, but YauPB can be used on bigger cubes as well.
+
+<Callout type="info">
+    This tutorial is written for people who can already solve a 4x4 using other methods.
+</Callout>
+
+## Tutorial
+<Steps>
+    {<h3>Solve two opposite centers</h3>}
+        <Image src="/images/big-cubes/yaupb/two-centers.svg" width={170} height={170} alt="Image of a 4x4x4 with the first two centers solved" lnk="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&bg=t&pzl=4&co=10&fo=70&fc=dddddwwddwwddddddddddddddddddddddddddddddddddddddddddyyddyyddddddddddddddddddddddddddddddddddddd"/>
+        As the first step, **two opposite centers are solved**. One of these centers will be your D-face color for the 2x2x3 block. If you can only solve with a specific block color, make sure to choose the correct centers to solve here.
+    {<h3>Solve three cross pieces</h3>}
+        <Image src="/images/big-cubes/yaupb/three-cross-pieces.svg" width={170} height={170} alt="Image of a 4x4x4 with three cross pieces solved" lnk="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&bg=t&pzl=4&co=10&fo=70&r=y-35x25&fc=dddddyyddyyddddddddddddddddddddddddddddddddddbbddwwdwwwdwwwddwwddddddddddddddooddddddddddddddggd"/>
+        Next, you can **solve three cross edges** by connecting wings in the E slices. Make sure you put the cross pieces in the correct order.
+    {<h3>Solve the remaining centers</h3>}
+        <Image src="/images/big-cubes/yaupb/centers.svg" width={170} height={170} alt="Image of a 4x4x4 with the remaining centers solved" lnk="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&bg=t&pzl=4&co=10&fo=70&r=y-35x25&fc=dddddrrddrrddddddddddyyddyydddddddddgggdgggdddddddddooodooodddddddddwwwwwwwwdwwddddddbbbdbbbdddd"/>
+        After having solved the three cross pieces, you can hold them in the bottom left with the white side facing left. Then, you can **solve the remaining centers** using R-, 2Rw-, 3Rw- and U-moves.
+    {<h3>Solve the remaining edges</h3>}
+        <Image src="/images/big-cubes/yaupb/edges.svg" width={170} height={170} alt="Image of a 4x4x4 with the remaining edges solved" lnk="https://visualcube.api.cubing.net/visualcube.php?fmt=svg&bg=t&pzl=4&co=10&fo=70&r=y-35x25&fc=ybbwrrrorrroryywryyoyyyryyyrbggyyrrgggggggggoyyrbbbyoooooooowrroowwgwwwwwwwwrwwwgooggbbbgbbbbbbb"/>
+        To **pair the remaining wings**, you should first do a `y' x'`-rotation. Then you should first solve any dedge and put it into DF. Now you can pair the other edges using [3-2-3 edge pairing](https://www.speedsolving.com/wiki/index.php?title=Edge_pairing#3-2-3_edge_pairing) on 4x4 or [Freeslice](https://www.speedsolving.com/wiki/index.php?title=Edge_pairing#Freeslice_edge_pairing) on bigger cubes. 
+    {<h3>Solve like a 3x3</h3>}
+        Finally you can undo the `y' x'`-rotation and solve **the cube normally.** Next, you must solve the F2L pairs on the left side to complete the 2x2x3.
+
+</Steps>
+
+### Dealing with Parity
+For cases where you do not recognize that you have parity (on 4x4 and one 6x6 case), you should solve OLL parity before solving edge orientation. In the other cases it should be solved immediately after pairing the wings.
+
+PLL parity should be done during the last layer. If you use OCLL + PLL, you should correct PLL parity before or after PLL, if you use ZBLL, you should correct it before or after ZBLL.
+
+## Learning more Optimized Algorithms
+Tips on which algorithms to use on big cubes can be found [here](/big-cubes/algs.mdx).

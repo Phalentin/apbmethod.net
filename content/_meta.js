@@ -13,7 +13,7 @@ export default {
     title: '3x3 One-Handed',
     type: 'page'
   },*/
-  bigcubes: {
+  'big-cubes': {
     title: '4x4+'
   },
   'other-resources': 'Other Resources'
