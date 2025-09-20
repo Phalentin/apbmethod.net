@@ -13,5 +13,6 @@ export default withNextra({
     unoptimized: true // mandatory, otherwise won't export
   },
   distDir: 'docs',
+  trailingSlash: true,
   assetPrefix: './'
 })
