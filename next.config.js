@@ -12,6 +12,5 @@ export default withNextra({
   images: {
     unoptimized: true // mandatory, otherwise won't export
   },
-  trailingSlash: true,
-  assetPrefix: './'
+  distDir: 'docs'
 })
