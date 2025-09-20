@@ -13,5 +13,5 @@ export default withNextra({
     unoptimized: true // mandatory, otherwise won't export
   },
   distDir: 'docs',
-  assetPrefix: 'https://apbmethod.net/'
+  assetPrefix: './'
 })
