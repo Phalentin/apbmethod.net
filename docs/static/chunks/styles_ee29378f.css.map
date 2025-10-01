@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///mnt/datadrive/apbmethod.net/styles.css"],"sourcesContent":[".x\\:border.x\\:inline-flex.x\\:rounded-md.x\\:items-stretch.nextra-border.x\\:float-end.x\\:overflow-hidden {\n    display: none !important;\n}"],"names":[],"mappings":"AAAA","debugId":null}}]
-}
