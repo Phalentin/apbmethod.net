@@ -10,7 +10,7 @@
     "dev": "next --turbopack",
     "build": "next build",
     "start": "next start",
-    "postbuild": "pagefind --site .next/server/app --output-path docs/_pagefind && echo apbmethod.net > docs/CNAME && echo '' > docs/.nojekyll"
+    "postbuild": "pagefind --site .next/server/app --output-path docs/_pagefind && cp -a postbuild-files/. docs/"
   },
   "devDependencies": {
     "pagefind": "^1.4.0"
