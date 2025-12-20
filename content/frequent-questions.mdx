@@ -1,0 +1,30 @@
+# Frequent questions
+### How in the world can I learn 620 algorithms?
+The number of algorithms in the APB method might scare you away. First you should know that the average CFOP solver probably already uses over 60 of the required algorithms. Additionaly, many LXS cases are fairly intuitive and you can actually learn a lot of them at a time. I'd guess that you could easily learn LXS and EO within a single week. ZBLL is a bit of a different story though. It personally took me just under two years to finish the set. It is definitely possible to do it within a much shorter timespan though. If you are really dedicated, you should and will be able to learn one sub-subset (12 algorithms) every week. Since ZBLL (excluding PLL) has 40 sub-subsets, learning all of them in under a year can be possible. If you take the approach of learning one algorithm per day, you will also finish in about 16 months (do note that there are better strategies than one algorithm per day).
+
+### What are the optimal splits for the different steps?
+The splits for solve time percentage and moves are in the following table:
+| Step        | Time Percentage | Movecount (STM)   |
+| ----------- | --------------- | ----------------- |
+| **2x2x3**   | ~35%            | 12-15             |
+| **BR Pair** | ~10%            | 6.03 *            |
+| **EO**      | ~15%            | 4.94              |
+| **LXS**     | ~15%            | 8.53+0.75 **      |
+| **ZBLL**    | ~25%            | 14.2+0.75×2 **    |
+| **Total**   | 100%            | **47.95 - 50.95** |
+
+\* For BR pair, the movecount already includes AUF/ARF.
+
+** with added average AUF
+
+### How many people use APB?
+APB is not a very widespread method. The Discord server has about 1,200 members but certainly not all of them use APB as their main method. I'd estimate that maybe 50 or so use the APB or a beginner variant in competition. As for full APB with all the algorithms, I'd guess there are probably less than ten people but out of those ten people, not everyone uses APB in competition.
+
+### What is the APB WR/WB?
+At the time of writing this (December 2025), I (at least as far as I am concerned) hold the APB WR single and average at 6.46 and 7.81 seconds respectively. The WB single and averages can be looked up in [this](https://docs.google.com/spreadsheets/d/1H7hUsYslmw59co5U9QCtRZhDHdnc5htZSTKff-xPjcY) spreadsheet.
+### What is EOPair and should I learn it?
+
+EOPair used to be the third step of APB, where you would insert the BR pair while orienting all of the edges. At some point, people realized that EOPair saved only about 0.3 moves on average compared to first solving the pair and then doing Edge Orientation. Therefore, it is not part of standard APB anymore and it is not recommended to learn the algorithms before any of the other required sets (including ZBLL). If you do want to learn it or a part of it, you can find more information [here](/variations/eopair).
+
+### Is full color neutrality worth it with APB?
+No, being color neutral gives little to no advantage over being x2-y neutral (dual neutrality) in APB. Because your 2x2x3 block will already contain 4 different colors, every possible 1x1x2, 1x2x2 and 2x2x2 block that may appear on a scramble can be used for the 2x2x3 in some way. Only for bigger blocks (e.g. 1x1x3 and 1x2x3) there are cases, where you can't take advantage of the full block. But those cases are so rare that it is basically not worth it.

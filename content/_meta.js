@@ -16,5 +16,6 @@ export default {
   'big-cubes': {
     title: '4x4+'
   },
-  'other-resources': 'Other Resources'
+  'other-resources': 'Other Resources',
+  'frequent-questions': 'Frequent Questions'
 }
