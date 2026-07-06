@@ -1,0 +1,121 @@
+1:"$Sreact.fragment"
+2:I[55169,["/_next/static/chunks/2u747cpwpyv15.js","/_next/static/chunks/2kx7aaa7x38a6.js","/_next/static/chunks/10jea999ppemq.js","/_next/static/chunks/0eskgo0_bgis6.js","/_next/static/chunks/14mrh2-p_w84d.js"],"TOCProvider"]
+3:I[769,["/_next/static/chunks/2u747cpwpyv15.js","/_next/static/chunks/2kx7aaa7x38a6.js","/_next/static/chunks/10jea999ppemq.js","/_next/static/chunks/0eskgo0_bgis6.js","/_next/static/chunks/14mrh2-p_w84d.js"],"Sidebar"]
+4:I[47486,["/_next/static/chunks/2u747cpwpyv15.js","/_next/static/chunks/2kx7aaa7x38a6.js","/_next/static/chunks/10jea999ppemq.js","/_next/static/chunks/0eskgo0_bgis6.js","/_next/static/chunks/14mrh2-p_w84d.js"],"ClientWrapper"]
+a:I[5500,["/_next/static/chunks/2u747cpwpyv15.js","/_next/static/chunks/2kx7aaa7x38a6.js","/_next/static/chunks/10jea999ppemq.js","/_next/static/chunks/0eskgo0_bgis6.js","/_next/static/chunks/14mrh2-p_w84d.js"],"Image"]
+b:I[63894,["/_next/static/chunks/2u747cpwpyv15.js","/_next/static/chunks/2kx7aaa7x38a6.js","/_next/static/chunks/10jea999ppemq.js","/_next/static/chunks/0eskgo0_bgis6.js","/_next/static/chunks/14mrh2-p_w84d.js"],"HeadingAnchor"]
+1a:I[97367,["/_next/static/chunks/2u747cpwpyv15.js","/_next/static/chunks/2kx7aaa7x38a6.js","/_next/static/chunks/10jea999ppemq.js","/_next/static/chunks/0eskgo0_bgis6.js","/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+1b:"$Sreact.suspense"
+:HL["/_next/static/chunks/2w9iard2quko9.css","style"]
+5:Tf0f,import { Callout, Steps } from 'nextra/components'
+import Image from 'next/image'
+
+<Image src="/images/tutorial/lxs.svg" width={200} height={200} alt="Image of a cube with LXS solved"/>
+# 4. Solving the Last Extended Slot (LXS)
+The last extended slot or LXS is probably the best step of the APB method. In this step, the solvers **solves the three remaining pieces in the d-layer**. This is done algorithmically and consists of **116 cases**.
+## Algorithms
+The LXS-algorithms can be found [here](https://docs.google.com/spreadsheets/d/1P2DB0SyA1BrezYJ_g7RJ7_l32Ilxq7lLtr53zlG_TUU/). Liam Highducheck has created a sheet which categorizes all the cases into seven categories for easier learning. It can be found [here](https://docs.google.com/spreadsheets/d/1ACKQXpMK0b8RWGoN9wMDbnF-W-S4mMdeJH5IcjeEyf8/).
+### Some Example Cases
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="R U2' R' U2 R' U2' R2 U2' R"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="R' U' R' U' R U2 R"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+<twisty-player
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="R U R' U' R U' R' U R' U' R U R"
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+
+<Callout type="default">
+    At a higher level, solvers can also learn dBL LXS and EO, which enables them to solve the FR pair and then do EO and LXS for the back slot. Usually, this is not worth it though.
+</Callout>
+
+## Beginner Approaches
+There are two main beginner approaches to solve LXS without or with fewer algorithms:
+### Solving the F2L Pair and then the DR Edge
+If you haven't learned any of the algorithms yet, you can follow the following approach:
+<Steps>
+    {<h3>Solve the dFR Pair</h3>}
+    **Solve the dFR pair like an F2L pair** while ignoring the edge belonging into DR. If the F2L edge is at DR, you have to take it out using `S R2' S' R2`.
+
+    {<h3>Solve the DR Edge</h3>}
+    **Solve the DR edge** by putting it at UL and then doing `S R2' S' R2`.
+</Steps>
+Below is an example solution using this approach:
+<twisty-player
+    id="lxs-beginner1"
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="
+        S R2' S' R2 R U2' R' U R U' R' U2 S R2' S' R2
+    "
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>
+
+### Inserting the Corner and then doing LXS
+If you have learned all the LXS cases with the corner in the D-layer, this approach allows you to do LXS in two steps:
+<Steps>
+    {<h3>Insert the Corner into DFR</h3>}
+    **Insert the corner** belonging into DFR. If you know all the LXS cases with the corner in the D-layer, the orientation doesn't matter. If you haven't learned all three sets, **the orientation has to match up** with one of the sets you learned. 
+
+    {<h3>Solve the LXS case</h3>}
+    Do the alg for the LXS case you have now.
+</Steps>
+Below is an example solution using this approach:
+<twisty-player
+    id="lxs-beginner1"
+    experimentalStickeringMaskOrbits="EDGES:----IIII----,CORNERS:----IIII"
+    experimental-setup-anchor="end"
+    experimental-setup-alg="x2"
+    alg="
+        U' R U R' U2 R U' R' U R' U2' R U2 R
+    "
+    hint-facelets="none"
+    camera-latitude="45"
+    camera-longitude="25"
+    color-scheme="dark"
+/>0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$L2",null,{"value":[{"value":"Algorithms","id":"algorithms","depth":2},{"value":"Some Example Cases","id":"some-example-cases","depth":3},{"value":"Beginner Approaches","id":"beginner-approaches","depth":2},{"value":"Solving the F2L Pair and then the DR Edge","id":"solving-the-f2l-pair-and-then-the-dr-edge","depth":3},{"value":"Inserting the Corner and then doing LXS","id":"inserting-the-corner-and-then-doing-lxs","depth":3}],"children":[["$","$L3",null,{}],["$","$L4",null,{"metadata":{"title":"4. Solving the Last Extended Slot (LXS)","filePath":"content/tutorial/lxs.mdx","timestamp":1757785558000},"sourceCode":"$5","children":["$L6","$L7"]}]]}]}],["$L8"],"$L9"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"xGZgPJiwyahWPcnSMs6oN"}
+6:["$","div",null,{"id":"nextra-skip-nav"}]
+7:["$","main",null,{"data-pagefind-body":true,"children":[["$","$La",null,{"src":"/images/tutorial/lxs.svg","width":200,"height":200,"alt":"Image of a cube with LXS solved"}],"\n",["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["4. Solving the Last Extended Slot (LXS)","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The last extended slot or LXS is probably the best step of the APB method. In this step, the solvers ",["$","strong",null,{"children":"solves the three remaining pieces in the d-layer"}],". This is done algorithmically and consists of ",["$","strong",null,{"children":"116 cases"}],"."]}],"\n",["$","h2",null,{"id":"algorithms","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Algorithms",["$","$Lb",null,{"id":"algorithms"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The LXS-algorithms can be found ",["$","a",null,{"href":"https://docs.google.com/spreadsheets/d/1P2DB0SyA1BrezYJ_g7RJ7_l32Ilxq7lLtr53zlG_TUU/","target":"_blank","rel":"noreferrer","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":["here",[" ",["$","svg",null,{"fill":"none","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":1.7,"viewBox":"0 0 24 24","height":"1em","className":"x:inline x:align-baseline x:shrink-0","children":[["$","path",null,{"d":"M7 17L17 7"}],["$","path",null,{"d":"M7 7h10v10"}]]}]]]}],". Liam Highducheck has created a sheet which categorizes all the cases into seven categories for easier learning. It can be found ",["$","a",null,{"href":"https://docs.google.com/spreadsheets/d/1ACKQXpMK0b8RWGoN9wMDbnF-W-S4mMdeJH5IcjeEyf8/","target":"_blank","rel":"noreferrer","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":["here",[" ",["$","svg",null,{"fill":"none","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":1.7,"viewBox":"0 0 24 24","height":"1em","className":"x:inline x:align-baseline x:shrink-0","children":[["$","path",null,{"d":"M7 17L17 7"}],["$","path",null,{"d":"M7 7h10v10"}]]}]]]}],"."]}],"\n",["$","h3",null,{"id":"some-example-cases","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Some Example Cases",["$","$Lb",null,{"id":"some-example-cases"}]]}],"\n",["$","twisty-player",null,{"experimentalStickeringMaskOrbits":"EDGES:----IIII----,CORNERS:----IIII","experimental-setup-anchor":"end","experimental-setup-alg":"x2","alg":"R U2' R' U2 R' U2' R2 U2' R","hint-facelets":"none","camera-latitude":"45","camera-longitude":"25","color-scheme":"dark"}],"\n",["$","twisty-player",null,{"experimentalStickeringMaskOrbits":"EDGES:----IIII----,CORNERS:----IIII","experimental-setup-anchor":"end","experimental-setup-alg":"x2","alg":"R' U' R' U' R U2 R","hint-facelets":"none","camera-latitude":"45","camera-longitude":"25","color-scheme":"dark"}],"\n",["$","twisty-player",null,{"experimentalStickeringMaskOrbits":"EDGES:----IIII----,CORNERS:----IIII","experimental-setup-anchor":"end","experimental-setup-alg":"x2","alg":"R U R' U' R U' R' U R' U' R U R","hint-facelets":"none","camera-latitude":"45","camera-longitude":"25","color-scheme":"dark"}],"\n",["$","div",null,{"className":"nextra-callout x:overflow-x-auto x:not-first:mt-[1.25em] x:flex x:rounded-lg x:border x:py-[.5em] x:pe-[1em] x:contrast-more:border-current! x:bg-green-100 x:dark:bg-green-900/30 x:text-green-700 x:dark:text-green-500 x:border-green-700 x:dark:border-green-800","children":[["$","div",null,{"className":"x:select-none x:text-[1.25em] x:ps-[.6em] x:pe-[.4em]","style":{"fontFamily":"\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""},"data-pagefind-ignore":"all","children":"$Lc"}],"$Ld"]}],"\n","$Le","\n","$Lf","\n","$L10","\n","$L11","\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19"]}]
+8:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/2w9iard2quko9.css","precedence":"next"}]
+9:["$","$L1a",null,{"children":["$","$1b",null,{"name":"Next.MetadataOutlet","children":"$@1c"}]}]
+c:["$","svg",null,{"viewBox":"0 0 16 16","fill":"currentColor","height":".8em","className":"x:mt-[.3em]","children":["$","path",null,{"d":"M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"}]}]
+d:["$","div",null,{"className":"x:w-full x:min-w-0","children":["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"At a higher level, solvers can also learn dBL LXS and EO, which enables them to solve the FR pair and then do EO and LXS for the back slot. Usually, this is not worth it though."}]}]
+e:["$","h2",null,{"id":"beginner-approaches","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Beginner Approaches",["$","$Lb",null,{"id":"beginner-approaches"}]]}]
+f:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"There are two main beginner approaches to solve LXS without or with fewer algorithms:"}]
+10:["$","h3",null,{"id":"solving-the-f2l-pair-and-then-the-dr-edge","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Solving the F2L Pair and then the DR Edge",["$","$Lb",null,{"id":"solving-the-f2l-pair-and-then-the-dr-edge"}]]}]
+11:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"If you haven’t learned any of the algorithms yet, you can follow the following approach:"}]
+12:["$","div",null,{"className":"nextra-steps x:ms-4 x:mb-12 x:border-s x:border-gray-200 x:ps-6 x:dark:border-neutral-800","style":{"--counter-id":"_S_1_"},"children":[["$","h3",null,{"children":"Solve the dFR Pair"}],["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"Solve the dFR pair like an F2L pair"}]," while ignoring the edge belonging into DR. If the F2L edge is at DR, you have to take it out using ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"S R2' S' R2"}],"."]}],["$","h3",null,{"children":"Solve the DR Edge"}],["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"Solve the DR edge"}]," by putting it at UL and then doing ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"S R2' S' R2"}],"."]}]]}]
+13:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Below is an example solution using this approach:"}]
+14:["$","twisty-player",null,{"id":"lxs-beginner1","experimentalStickeringMaskOrbits":"EDGES:----IIII----,CORNERS:----IIII","experimental-setup-anchor":"end","experimental-setup-alg":"x2","alg":" S R2' S' R2 R U2' R' U R U' R' U2 S R2' S' R2 ","hint-facelets":"none","camera-latitude":"45","camera-longitude":"25","color-scheme":"dark"}]
+15:["$","h3",null,{"id":"inserting-the-corner-and-then-doing-lxs","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Inserting the Corner and then doing LXS",["$","$Lb",null,{"id":"inserting-the-corner-and-then-doing-lxs"}]]}]
+16:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"If you have learned all the LXS cases with the corner in the D-layer, this approach allows you to do LXS in two steps:"}]
+17:["$","div",null,{"className":"nextra-steps x:ms-4 x:mb-12 x:border-s x:border-gray-200 x:ps-6 x:dark:border-neutral-800","style":{"--counter-id":"_S_2_"},"children":[["$","h3",null,{"children":"Insert the Corner into DFR"}],["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"Insert the corner"}]," belonging into DFR. If you know all the LXS cases with the corner in the D-layer, the orientation doesn’t matter. If you haven’t learned all three sets, ",["$","strong",null,{"children":"the orientation has to match up"}]," with one of the sets you learned."]}],["$","h3",null,{"children":"Solve the LXS case"}],["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Do the alg for the LXS case you have now."}]]}]
+18:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Below is an example solution using this approach:"}]
+19:["$","twisty-player",null,{"id":"lxs-beginner1","experimentalStickeringMaskOrbits":"EDGES:----IIII----,CORNERS:----IIII","experimental-setup-anchor":"end","experimental-setup-alg":"x2","alg":" U' R U R' U2 R U' R' U R' U2' R U2 R ","hint-facelets":"none","camera-latitude":"45","camera-longitude":"25","color-scheme":"dark"}]
+1c:null

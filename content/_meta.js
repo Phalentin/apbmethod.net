@@ -3,6 +3,7 @@ export default {
   tutorial: {
     title: 'Tutorial'
   },
+  'other-resources': 'Other Resources',
   advanced: {
     title: 'Advanced'
   },
@@ -16,6 +17,8 @@ export default {
   'big-cubes': {
     title: '4x4+'
   },
-  'other-resources': 'Other Resources',
+  'example-solves': {
+    title: 'Example Solves'
+  },
   'frequent-questions': 'Frequent Questions'
 }
